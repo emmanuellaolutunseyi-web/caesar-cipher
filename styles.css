@@ -1,0 +1,98 @@
+body{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  position:relative;
+}
+body.light{
+  background-color:beige;
+}
+
+body.dark{
+  background-color:rgb(73, 71, 71);
+  color:beige;
+}
+#note{
+  color:red;
+}
+#input{
+  height: 200px;
+  width: 300px;
+  padding: 5px;
+  border-radius:3px;
+}
+#cipher_mode{
+  margin-bottom:5px;
+}
+
+.key{
+  height: 50px;
+  width: 150px;
+  display:flex;
+  justify-content:center;
+  background: rgb(19, 19, 68);
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0,2);
+  align-items:center;
+  margin-bottom: 10px;
+  color: beige;
+}
+.key span{
+  width:100%;
+  text-align:center;
+  font-size:30px;
+  font-width: 550;
+  cursor:pointer;
+}
+
+.key span.num{
+  font-size: 25px;
+  border-right: 3px solid rgba(0,0,0,0,2);
+  border-left: 3px solid rgba(0,0,0,0,2);
+}
+.theme{
+  position:absolute;
+  top: 20px;
+  right: 20px;
+}
+.theme button{
+  padding: 7px;
+  border-radius: 5px;
+  background:rgb(19, 19, 68);
+  color:beige;
+  border:none;
+}
+
+.output{
+  height: 200px;
+  width: 300px;
+  padding: 5px;
+  border-radius:3px;
+  background-color:white;
+  outline: 1px solid black;
+}
+
+.boxes{
+  display:flex;
+  flex-direction:row;
+  gap: 100px;
+  margin-top:30px;
+}
+
+h2{
+  font-size:20px;
+}
+.span{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+}
+
+.plus:hover{
+  color:blue;
+}
+.minus:hover{
+  color:red;
+}

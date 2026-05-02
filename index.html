@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ceaser's cipher</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light">
+  <div class="theme" >
+    <button id="theme">Theme</button>
+  </div>
+  <h1 id="header">Caeser's cipher</h1>
+  <h2 id="select">Select mode</h2>
+  <div id="mode">
+    <select name="ciphermode" id="cipher_mode">
+      <option value="Encryption">Encryption mode</option>
+      <option value="Decryption">Decryption mode</option>
+   </select>
+   </div>
+  <div class="boxes">
+    <textarea id="input" placeholder="Enter word or statement..."></textarea>
+    <div class="output"></div>
+  </div>
+  <div>
+    <h3>Enter number of steps</h3>
+    <p id="note">Choose a shift value (1–25). Encryption uses a positive shift, and decryption automatically reverses it.</p>
+    <div class="span">
+      <div class="key" id="key">
+        <span class="minus">-</span>
+        <span class="number">1</span>
+        <span class="plus">+</span>
+      </div>
+    </div>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
