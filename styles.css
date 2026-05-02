@@ -35,17 +35,17 @@ body.dark {
   margin-bottom: 5px;
 }
 
-/* 📦 SIDE-BY-SIDE BOXES (FIXED) */
 .boxes {
   display: flex;
   flex-direction: row;
-  gap: 40px; /* reduced from 100px */
+  gap: 40px; 
   margin-top: 30px;
   align-items: center;
   justify-content: center;
+  color:black;
 }
 
-/* 📤 OUTPUT */
+
 .output {
   height: 200px;
   width: 300px;
@@ -55,7 +55,7 @@ body.dark {
   outline: 1px solid black;
 }
 
-/* 🔢 KEY CONTROL BOX */
+
 .span {
   width: 100%;
   display: flex;
@@ -76,7 +76,6 @@ body.dark {
   color: beige;
 }
 
-/* ➕➖ BUTTONS (FIXED SMALL SIZE) */
 .plus,
 .minus {
   font-size: 18px;
@@ -84,14 +83,13 @@ body.dark {
   padding: 2px 8px;
 }
 
-/* NUMBER */
+
 .number {
   font-size: 20px;
   min-width: 25px;
   text-align: center;
 }
 
-/* 🎨 THEME BUTTON */
 .theme {
   position: absolute;
   top: 20px;
@@ -107,7 +105,6 @@ body.dark {
   cursor: pointer;
 }
 
-/* 🔘 HOVER EFFECTS */
 .plus:hover {
   color: blue;
 }
@@ -116,7 +113,6 @@ body.dark {
   color: red;
 }
 
-/* 📱 MOBILE (keeps boxes side-by-side!) */
 @media (max-width: 768px) {
   body {
     padding: 10px;
