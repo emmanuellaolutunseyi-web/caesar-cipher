@@ -1,121 +1,215 @@
+:root {
+  --primary: rgb(81, 81, 226);
+  --dark-blue: rgb(19, 19, 68);
+  --light-bg: beige;
+  --dark-bg: rgb(73, 71, 71);
+  --light-card: white;
+  --dark-card: rgb(55, 55, 55);
+  --light-text: black;
+  --dark-text: beige;
+}
+
+/* BODY */
+
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   position: relative;
+  min-height: 100vh;
+  font-family:
+    "Inter",
+    system-ui,
+    sans-serif;
+  line-height: 1.5;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  margin: 0;
+  padding: 20px;
 }
 
-/* 🌗 THEMES */
+/* THEMES */
+
 body.light {
-  background-color: beige;
-  color: black;
+  background: var(--light-bg);
+  color: var(--light-text);
 }
 
 body.dark {
-  background-color: rgb(73, 71, 71);
-  color: beige;
+  background: var(--dark-bg);
+  color: var(--dark-text);
 }
 
-/* 📝 NOTE */
+/* MAIN CONTAINER */
+
+.container {
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+body.light .container {
+  background: var(--light-card);
+}
+
+body.dark .container {
+  background: var(--dark-card);
+}
+
+/* NOTE */
+
 #note {
-  color: red;
+  color: var(--primary);
+  margin-bottom: 15px;
 }
 
-/* 🖊️ INPUT */
-#input {
-  height: 200px;
-  width: 300px;
-  padding: 5px;
-  border-radius: 3px;
-}
+/* INPUT + OUTPUT */
 
-/* 🔽 DROPDOWN */
-#cipher_mode {
-  margin-bottom: 5px;
-}
-
-.boxes {
-  display: flex;
-  flex-direction: row;
-  gap: 40px; 
-  margin-top: 30px;
-  align-items: center;
-  justify-content: center;
-  color:black;
-}
-
-
+#input,
 .output {
   height: 200px;
   width: 300px;
-  padding: 5px;
-  border-radius: 3px;
-  background-color: white;
-  outline: 1px solid black;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family:
+    "Fira Code",
+    monospace;
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.25s ease;
 }
 
+#input:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(81,81,226,.3);
+}
+.output {
+  background: white;
+}
 
-.span {
-  width: 100%;
+/* Dark theme */
+
+body.dark #input,
+body.dark .output {
+  background: rgb(50,50,50);
+  color: beige;
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.3);
+}
+
+/* DROPDOWN */
+
+#cipher_mode {
+  margin-bottom: 10px;
+  background: var(--primary);
+  color: beige;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+#cipher_mode:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 5px 15px rgba(81,81,226,.3);
+}
+
+/* INPUT/OUTPUT CONTAINER */
+
+.boxes {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
   align-items: center;
+  justify-content: center;
 }
+
+/* KEY COUNTER */
 
 .key {
-  height: 45px;
-  width: 140px;
+  height: 50px;
+  width: 150px;
   display: flex;
-  justify-content: center;
-  background: rgb(19, 19, 68);
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  border-radius: 15px;
   color: beige;
+  background:
+    linear-gradient(
+      135deg,
+      rgb(19,19,68),
+      rgb(81,81,226)
+    );
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.2);
 }
+
+/* PLUS / MINUS */
 
 .plus,
 .minus {
-  font-size: 18px;
+  font-size: 24px;
   cursor: pointer;
-  padding: 2px 8px;
+  transition: all 0.2s ease;
 }
 
+.plus:hover,
+.minus:hover {
+  color: white;
+  transform: scale(1.2);
+}
 
 .number {
-  font-size: 20px;
-  min-width: 25px;
+  font-size: 22px;
+  min-width: 30px;
   text-align: center;
 }
+
+/* THEME BUTTON */
 
 .theme {
   position: absolute;
   top: 20px;
   right: 20px;
 }
-
 .theme button {
-  padding: 7px;
-  border-radius: 5px;
-  background: rgb(19, 19, 68);
-  color: beige;
+  padding: 10px 15px;
   border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: beige;
   cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-.plus:hover {
-  color: blue;
+.theme button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 5px 15px rgba(81,81,226,.3);
 }
 
-.minus:hover {
-  color: red;
-}
+/* RESPONSIVE */
 
 @media (max-width: 768px) {
+
   body {
-    padding: 10px;
+    padding: 15px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 20px;
   }
 
   .boxes {
@@ -124,10 +218,12 @@ body.dark {
 
   #input,
   .output {
-    width: 45%;
+    width: 100%;
+    max-width: 320px;
   }
 
   .key {
-    width: 120px;
+    width: 130px;
   }
+
 }
